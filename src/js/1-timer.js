@@ -15,10 +15,15 @@ const options = {
         title: 'Error',
         message: 'Please choose a date in the future',
       });
+
       startButton.disabled = true;
+      startButton.classList.remove('active-btn');
+      datetimePicker.classList.remove('active-input');
     } else {
       userSelectedDate = selectedDate;
       startButton.disabled = false;
+      startButton.classList.add('active-btn');
+      datetimePicker.classList.add('active-input');
     }
   },
 };
@@ -62,11 +67,13 @@ function startCountdown() {
   countdownInterval = setInterval(() => {
     const currentTime = new Date();
     const timeDifference = userSelectedDate - currentTime;
+    datetimePicker.classList.add('active-clock');
 
     if (timeDifference <= 0) {
       clearInterval(countdownInterval);
       updateTimerDisplay(0, 0, 0, 0);
       datetimePicker.disabled = false;
+      datetimePicker.classList.remove('active-clock');
       return;
     }
 
