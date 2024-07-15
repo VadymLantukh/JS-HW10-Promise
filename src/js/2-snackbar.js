@@ -22,8 +22,6 @@ formEl.addEventListener('submit', event => {
           iziToast.show({
             title: '✅ OK',
             messageColor: '#fff',
-            maxWidth: '400px',
-            titleColor: '#fff',
             titleColor: '#fff',
             backgroundColor: '#59a10d',
             message: `Fulfilled promise in ${delayMs}ms`,
@@ -33,7 +31,6 @@ formEl.addEventListener('submit', event => {
           iziToast.show({
             title: '❌ ERROR',
             messageColor: '#fff',
-            titleColor: '#fff',
             titleColor: '#fff',
             backgroundColor: '#ef4040',
             message: `Rejected promise in ${delayMs}ms`,
